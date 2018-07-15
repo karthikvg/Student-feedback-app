@@ -1,2 +1,2 @@
 # Student-feedback-app
-This app is build using django framework
+This app is available on https://student-feedback.herokuapp.com/
