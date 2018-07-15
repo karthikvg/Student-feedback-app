@@ -1,0 +1,21 @@
+{% extends 'form/base.html' %}
+{% block title %}Feedback Form{% endblock %}
+{% block body %}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div align="center">
+<div class="panel panel-primary" style="width:400px" >
+      <div class="panel-heading" align="left">Register as a student</div>
+    <form class="responsive" method="POST">
+        {% csrf_token %}
+        <br/>
+            {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="login"/><br/>
+        <a href="{% url 'form:signup' %}" ><input type="button" class="btn btn-link" value="Sign Up"></a>
+    </form>
+</div>
+</div>
+{% endblock %}

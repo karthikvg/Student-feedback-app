@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: grey;
+   text-align: center;
+    }
+  </style>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</head>
+<body style="background-color:#3499ba">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">FeedBack-App<i class="material-icons" style="font-size:18px;color:#3499ba">sms</i></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'form:home' %}">Home</a></li>
+      <li><a href="{% url 'form:about' %}">About</a></li>
+      <li><a href="#">Fork Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+{% block body %}{% endblock %}
+<div class="footer">
+
+    <div class="container-fluid">
+    <br/>
+  <p>© copyrights belong to Karthik Vakkalagadda</p>
+    </div>
+</div>
+</body>
+</html>

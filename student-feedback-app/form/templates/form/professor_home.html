@@ -1,0 +1,18 @@
+{% extends 'form/professors_base.html' %}
+{% block title %}Feedback Form{% endblock %}
+{% block body %}
+<div class="container">
+  <div class="jumbotron">
+    <h1 align="center">Inbox </h1>
+    <p align="center">The following are the feedbacks you have recieved so far...</p>
+  </div>
+</div>
+{%for i in Messages%}
+    <button   style="background-color:x9d9d9" data-toggle="collapse" data-target="#{{i.id}}">{{i.title}}</button>
+
+    <div id="{{i.id}}" class="collapse" style="background-color:white;font-size:180%;">
+        <p align="center">{{i.date}}</p>
+        <p align="center">{{i.feed_back}}<br/></p>
+    </div>
+{%endfor%}
+{% endblock %}

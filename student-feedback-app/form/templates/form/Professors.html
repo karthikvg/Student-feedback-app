@@ -1,0 +1,67 @@
+{% extends 'form/student_base.html' %}
+{% block title %}Feedback Form{% endblock %}
+{% block body %}
+
+    {%for i in Professors%}
+<div class="container">
+    <div class="card" style="background:white" align="left">
+          <img src="{{i.picture}}" style="width:250px;height:200px">
+          <h1>{{i.name}}</h1>
+          <p class="title">{{i.profession}}</p>
+          <p>Vignan University
+          <button type="button" data-toggle="modal" data-target="#{{i.roll_no}}">Profile</button>
+              <a href="{% url 'form:writefeedback' i.roll_no %}" ><button>Contact</button></a></p></div>
+    </div>
+
+  <div class="modal fade" id="{{i.name}}" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <br><br/>
+    <br><br/>
+
+  <div class="modal fade" id="{{i.roll_no}}" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{{i.name}}</h4>
+        </div>
+        <div class="modal-body">
+            <p>{{i.description}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   {%endfor%}
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+
+{% endblock %}

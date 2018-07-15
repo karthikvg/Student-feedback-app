@@ -1,0 +1,21 @@
+{% extends 'form/base.html' %}
+{% block title %}Feedback Form{% endblock %}
+{% block body %}
+<br/>
+<br/>
+<br/>
+<div align="center">
+<div class="panel panel-primary form-group" style="width:800px;height:450px;" >
+      <div class="panel-heading" align="center">WRITE YOUR FEEDBACK HERE</div>
+    <form class="responsive" method="POST" align="center">
+        {% csrf_token %}
+        <br/>
+            <strong>Title:</strong><br/>{{form.title}}<br/>
+            <strong>Feedback:</strong><br/>
+        <center>{{form.feed_back}}</center>
+        <br/>
+        <input class="btn btn-primary btn-lg" type="submit" value="send"/><br/>
+    </form>
+</div>
+</div>
+{% endblock %}
